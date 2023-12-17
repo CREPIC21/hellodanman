@@ -10,7 +10,7 @@ module.exports = async function (context, req) {
 
     if (req.method === "GET") {
         try {
-            // Get thee entity for reading the count attribute (assuming a specific partition key and row key)
+            // Get the - test entity for reading the count attribute (assuming a specific partition key and row key)
             const partitionKey = 'Counts';
             const rowKey = 'VisitorCount';
 
