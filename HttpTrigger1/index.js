@@ -1,16 +1,19 @@
+require('dotenv').config(); // Load environment variables from .env file
+
 module.exports = async function (context, req) {
     const { TableClient } = require("@azure/data-tables");
 
     // Azure Cosmos DB Table API configuration
-    const connectionString = "DefaultEndpointsProtocol=https;AccountName=danmandb;AccountKey=G0tDupq4Ocp1TODK97EoXGgZfG6NZaPTdHaprnkvXruehxj8staHXf8RmS0L97VkwwNXIO2id3AMACDbb64pIA==;TableEndpoint=https://danmandb.table.cosmos.azure.com:443/;";
+    const connectionString = process.env.CONNECTIONSTRING;
     const tableName = "VisitorCount";
+    console.log(connectionString);
 
     // Create a table client
     const tableClient = TableClient.fromConnectionString(connectionString, tableName);
 
     if (req.method === "GET") {
         try {
-            // Get the - test entity for reading the count attribute (assuming a specific partition key and row key)
+            // Get the entity for reading the count attribute (assuming a specific partition key and row key)
             const partitionKey = 'Counts';
             const rowKey = 'VisitorCount';
 
