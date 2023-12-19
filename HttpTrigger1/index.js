@@ -4,7 +4,7 @@ module.exports = async function (context, req) {
     const { TableClient } = require("@azure/data-tables");
 
     // Azure Cosmos DB Table API configuration
-    const connectionString = process.env.CONNECTIONSTRING;
+    const connectionString = process.env.DBCONNECTIONSTRING;
     const tableName = "VisitorCount";
     console.log(connectionString);
 
