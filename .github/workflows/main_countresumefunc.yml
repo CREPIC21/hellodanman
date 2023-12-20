@@ -60,4 +60,4 @@ jobs:
           app-name: 'countresumefunc'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7E34EBDD3E054B6EBD1804459B4C6EAE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F8CDA235D4B142BC974ED9B934236065 }}
